@@ -1,0 +1,493 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: #f8f8f8;
+    color: #17191f;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    min-height: 72px;
+    padding: 10px 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    background: #e7e8ec;
+    border-bottom: 1px solid #d5d6da;
+}
+
+header > a:first-child {
+    color: #17191f;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+header h1 {
+    font-size: 25px;
+}
+
+.search-box {
+    max-width: 640px;
+    margin: 0 auto;
+    flex: 1;
+}
+
+.search-box form {
+    height: 44px;
+    display: flex;
+    overflow: hidden;
+    border: 1px solid #c9cbd0;
+    border-radius: 6px;
+    background: #fff;
+}
+
+.search-box input {
+    width: 100%;
+    min-width: 0;
+    padding: 0 16px;
+    border: 0;
+    outline: 0;
+    font: inherit;
+}
+
+.search-box button {
+    width: 48px;
+    border: 0;
+    background: #fff;
+    font-size: 0;
+    cursor: pointer;
+    transition: background 180ms ease, transform 180ms ease;
+}
+
+.search-box button:hover {
+    background: #dff3ff;
+}
+
+.search-box button::before {
+    content: "⌕";
+    font-size: 30px;
+}
+
+.fotoUsuario {
+    position: relative;
+    min-width: 170px;
+    padding-left: 52px;
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+.fotoUsuario img {
+    position: absolute;
+    top: 1px;
+    left: 0;
+    display: block;
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+}
+
+.fotoUsuario a {
+    color: #43464d;
+    font-size: 13px;
+    transition: color 180ms ease;
+}
+
+.fotoUsuario a:hover {
+    color: #1684bd;
+}
+
+.fotoCarrinho {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    color: #17191f;
+    font-size: 14px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: color 180ms ease, transform 180ms ease;
+}
+
+.fotoCarrinho:hover {
+    color: #1684bd;
+}
+
+.fotoCarrinho img {
+    display: none;
+}
+
+.fotoCarrinho::before {
+    content: "";
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    background: center / contain no-repeat url("carrinhoCompras.png");
+}
+
+nav {
+    background: #fbfbfc;
+    border-bottom: 1px solid #e0e1e4;
+}
+
+nav ul {
+    min-height: 44px;
+    padding: 0 3%;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+}
+
+nav a {
+    display: inline-block;
+    color: #24262c;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 180ms ease, transform 180ms ease;
+}
+
+nav a:hover,
+.categorias a:hover {
+    color: #1684bd;
+}
+
+nav a:hover,
+.fotoCarrinho:hover,
+.search-box button:hover {
+    transform: scale(1.05);
+}
+
+main {
+    width: min(1100px, calc(100% - 40px));
+    margin: 19px auto 36px;
+    flex: 1;
+}
+
+.promocoes {
+    position: relative;
+    min-height: 240px;
+    margin-bottom: 24px;
+    padding: 21px 70px;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 7px;
+    background: #e7e8eb;
+    text-align: center;
+}
+
+.promocoes h2 {
+    position: relative;
+    z-index: 1;
+    color: #17191f;
+    font-size: 31px;
+}
+
+.promocoes img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.promocoes button {
+    position: absolute;
+    z-index: 1;
+    top: 50%;
+    padding: 0 8px;
+    transform: translateY(-50%);
+    border: 0;
+    background: transparent;
+    color: #111318;
+    font-size: 42px;
+    cursor: pointer;
+    transition: color 180ms ease, transform 180ms ease;
+}
+
+.promocoes button:hover {
+    color: #1684bd;
+    transform: translateY(-50%) scale(1.12);
+}
+
+.promocoes button:first-of-type {
+    left: 10px;
+}
+
+.promocoes button:last-of-type {
+    right: 10px;
+}
+
+.categorias {
+    margin-bottom: 17px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    text-align: center;
+}
+
+.categorias h2,
+.destaque h2 {
+    grid-column: 1 / -1;
+    font-size: 23px;
+    text-align: left;
+}
+
+.categorias article a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #17191f;
+    text-decoration: none;
+    transition: transform 180ms ease, color 180ms ease;
+}
+
+.categorias article img {
+    width: 94px;
+    height: 94px;
+    margin-bottom: 7px;
+    padding: 18px;
+    border: 1px solid #aeb1b6;
+    border-radius: 50%;
+    background: #eceef0;
+    object-fit: contain;
+}
+
+.categorias h3,
+.categorias p {
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+.categorias h3 {
+    font-weight: normal;
+}
+
+.destaque {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 12px 14px;
+}
+
+.produto {
+    min-width: 0;
+    padding: 8px 12px 10px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #bfc1c5;
+    border-radius: 3px;
+    background: #fbfbfb;
+    transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.produto:hover {
+    z-index: 1;
+    transform: scale(1.03);
+    border-color: #8bcff2;
+    box-shadow: 0 5px 14px #1684bd1c;
+}
+
+.produto > a {
+    display: block;
+    color: #202229;
+    text-decoration: none;
+}
+
+.produto img {
+    display: block;
+    width: 100%;
+    height: 125px;
+    margin-bottom: 9px;
+    border-radius: 3px;
+    background: #f0f1f3;
+    object-fit: contain;
+}
+
+.produto h3 {
+    height: 32px;
+}
+
+.produto h3,
+.produto > p:first-of-type {
+    overflow: hidden;
+    font-size: 13px;
+    line-height: 1.25;
+    text-overflow: ellipsis;
+}
+
+.produto > p:first-of-type {
+    height: 32px;
+    white-space: normal;
+}
+
+.produto > p[aria-label] {
+    margin: 5px 0 6px;
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.estrelas-preenchidas {
+    color: #f2b632;
+}
+
+.estrelas-vazias {
+    color: #c5c8ce;
+}
+
+.produto > p[aria-label] span {
+    display: inline-block;
+    width: 18px;
+    line-height: 1;
+    text-align: center;
+}
+
+.produto > p strong {
+    font-size: 14px;
+}
+
+.produto button {
+    width: 100%;
+    min-height: 33px;
+    margin-top: auto;
+    padding: 5px 4px;
+    border: 0;
+    border-radius: 5px;
+    background: #cfeeff;
+    color: #15384b;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 180ms ease, background 180ms ease;
+}
+
+.produto button:hover {
+    transform: scale(1.03);
+    background: #a9def8;
+}
+
+footer {
+    padding: 20px;
+    background: #e7e8ec;
+    color: #565a62;
+    font-size: 13px;
+    text-align: center;
+}
+
+@media (max-width: 900px) {
+    header {
+        gap: 16px;
+    }
+
+    .fotoUsuario {
+        min-width: auto;
+    }
+
+    nav ul {
+        gap: 24px;
+    }
+
+    .destaque {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .fotoUsuario {
+        min-width: auto;
+        margin-left: auto;
+        padding-left: 44px;
+    }
+
+    .fotoCarrinho {
+        order: 2;
+    }
+
+    .search-box {
+        max-width: none;
+        flex: 0 0 100%;
+        order: 3;
+    }
+
+    nav ul {
+        padding: 12px 16px;
+        flex-wrap: wrap;
+        gap: 12px 22px;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    main {
+        width: calc(100% - 28px);
+        margin-top: 14px;
+    }
+
+    .promocoes {
+        min-height: 180px;
+        padding: 23px 42px;
+    }
+
+    .promocoes h2 {
+        font-size: 22px;
+    }
+
+    .promocoes button {
+        font-size: 32px;
+    }
+
+    .categorias {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px 8px;
+    }
+
+    .categorias h2,
+    .destaque h2 {
+        font-size: 20px;
+    }
+
+    .categorias article img {
+        width: 70px;
+        height: 70px;
+        padding: 13px;
+    }
+
+    .categorias h3,
+    .categorias p {
+        font-size: 12px;
+    }
+
+    .destaque {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    nav a,
+    .fotoCarrinho,
+    .search-box button,
+    .promocoes button,
+    .categorias article a,
+    .produto,
+    .produto button {
+        transition: none;
+    }
+}
