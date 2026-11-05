@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
+<script src="script.js" defer></script>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,35 +59,27 @@
         </section>
 
         <!-- CARRINHO -->
-        <a href="#" class="fotoCarrinho" aria-label="Carrinho de compras com zero itens">
-
-            <img src="imagens/carrinho.png" alt="">
-
-            <span>
-                <strong>Carrinho</strong>
-                <br>
-                (0 itens)
-            </span>
-
-        </a>
+  <a href="#" class="fotoCarrinho" aria-label="Carrinho de compras com zero itens">
+    <img src="imagens/carrinho.png" alt="">
+    <span>
+        <strong>Carrinho</strong>
+        <br>
+        <span id="contador-carrinho">(0 itens)</span>
+    </span>
+</a>
 
     </header>
 
 
     <!-- MENU DE NAVEGAÇÃO -->
     <nav aria-label="Menu principal">
+    <button type="button" class="menu-toggle" aria-expanded="false"
+            aria-controls="menu-lista" aria-label="Abrir menu">☰</button>
 
-        <ul>
-            <li><a href="#categorias">CATEGORIAS</a></li>
-            <li><a href="#ofertas">OFERTAS</a></li>
-            <li><a href="#eletronicos">ELETRÔNICOS</a></li>
-            <li><a href="#casa">CASA</a></li>
-            <li><a href="#moda">MODA</a></li>
-            <li><a href="#petshop">PETSHOP</a></li>
-        </ul>
-
-    </nav>
-
+    <ul id="menu-lista">
+        ...
+    </ul>
+</nav>
 
     <!-- CONTEÚDO PRINCIPAL -->
     <main>
